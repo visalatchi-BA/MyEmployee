@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:model="clr-namespace:MyEmployee.Model"
+             x:Name="deletePage"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             
+             x:Class="MyEmployee.Views.DeleteEmployee">
+    <StackLayout>
+        <Button Text="DeleteEmployee"
+                Margin="10"
+                Command="{Binding DeleteEmployeeCommand}"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"
+                BackgroundColor="Purple"
+                WidthRequest="200"
+                HeightRequest="60"
+                CornerRadius="20" />
+        <ListView  ItemsSource="{Binding Employees}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Employee">
+                    <ViewCell>
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+
+
+                            </Grid.ColumnDefinitions>
+
+
+                            <Label Text="{Binding Name}"
+                                   Grid.Column="0"
+                                   TextColor="Black"
+                                   FontSize="20" />
+
+                            <Label Text="{Binding EmployeeID}"
+                                   Grid.Column="1"
+                                   TextColor="Black"
+                                   FontSize="20" />
+
+
+                            <Label Text="{Binding Email}"
+                                   Grid.Column="2"
+                                   TextColor="Black"
+                                   FontSize="20" />
+                            
+                            <Button Text="Delete"
+                                    Grid.Column="3"
+                                    Command="{Binding BindingContext.DeleteCommand,Source={x:Reference deletePage}}"
+                                    CommandParameter="{Binding .}"
+                                    
+                                    HorizontalOptions="Center" />
+
+
+                        </Grid>
+                    </ViewCell>
+
+
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+  
+</ContentPage>

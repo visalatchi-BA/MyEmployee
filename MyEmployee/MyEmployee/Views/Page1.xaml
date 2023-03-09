@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MyEmployee.Views.Page1">
+ <StackLayout>
+  <Grid Margin="20,0,20,0"
+        VerticalOptions="CenterAndExpand"
+        RowSpacing="20">
+   <Grid.RowDefinitions>
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="Auto" />
+   </Grid.RowDefinitions>
+   <StackLayout Grid.Row="0">
+    <Button Text="Add Employee"
+            HorizontalOptions="CenterAndExpand"
+            TextColor="White"
+            BackgroundColor="Purple"
+            WidthRequest="200"
+            HeightRequest="60"
+            CornerRadius="20"
+            Command="{Binding AddCommand}" />
+   </StackLayout>
+
+   <StackLayout Grid.Row="1">
+    <Button Text="Get Employee"
+            HorizontalOptions="CenterAndExpand"
+            TextColor="White"
+            BackgroundColor="Purple"
+            WidthRequest="200"
+            HeightRequest="60"
+            CornerRadius="20"
+            Command="{Binding GetCommand}" />
+   </StackLayout>
+
+   <StackLayout Grid.Row="2">
+    <Button Text="Edit Employee"
+            HorizontalOptions="CenterAndExpand"
+            TextColor="White"
+            BackgroundColor="Purple"
+            WidthRequest="200"
+            HeightRequest="60"
+            CornerRadius="20"
+            Command="{Binding EditCommand}" />
+   </StackLayout>
+
+   <StackLayout Grid.Row="3">
+    <Button Text="Delete Employee"
+            HorizontalOptions="CenterAndExpand"
+            TextColor="White"
+            BackgroundColor="Purple"
+            WidthRequest="200"
+            HeightRequest="60"
+            CornerRadius="20"
+            Command="{Binding DeleteCommand}" />
+   </StackLayout>
+  </Grid>
+ </StackLayout>
+  
+</ContentPage>
